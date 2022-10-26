@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
+import Table from './src/components/Table/Table'
 
 const App = () => (
 	<View style={styles.container}>
-		<Text style={{ color: '#fff', marginTop: 50 }}>Hello world!</Text>
+		<Table />
 		<StatusBar style={'auto'} />
 	</View>
 )
