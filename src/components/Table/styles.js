@@ -16,17 +16,28 @@ export const styles = StyleSheet.create({
 		marginTop: 5,
 		marginBottom: 5
 	},
-	row_head: {
-		flexDirection: 'row',
-		justifyContent: 'space-between',
+	head: {
+		marginTop: 0,
+		marginBottom: 0,
+		backgroundColor: '#161c2f'
+	},
+	row_total: {
+		alignItems: 'center',
 		padding: 25,
-		backgroundColor: '#161c2f',
-		borderRadius: 50
+		backgroundColor: '#242d43',
+		borderRadius: 50,
+		marginTop: 5,
+		marginBottom: 5
 	},
 	text: {
 		fontSize: 12,
 		textAlign: 'start',
 		color: '#fff',
 		width: 90
+	},
+	text_total: {
+		fontSize: 12,
+		textAlign: 'center',
+		color: '#fff'
 	}
 })
