@@ -21,13 +21,8 @@ export const styles = StyleSheet.create({
 		marginBottom: 0,
 		backgroundColor: '#161c2f'
 	},
-	row_total: {
-		alignItems: 'center',
-		padding: 25,
-		backgroundColor: '#242d43',
-		borderRadius: 50,
-		marginTop: 5,
-		marginBottom: 5
+	total: {
+		justifyContent: 'center'
 	},
 	text: {
 		fontSize: 12,
@@ -36,8 +31,6 @@ export const styles = StyleSheet.create({
 		width: 90
 	},
 	text_total: {
-		fontSize: 12,
-		textAlign: 'center',
-		color: '#fff'
+		textAlign: 'center'
 	}
 })

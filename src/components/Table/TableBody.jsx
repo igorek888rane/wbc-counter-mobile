@@ -11,8 +11,8 @@ const TableBody = () => {
 			{cells.map(cell => (
 				<Row head={false} key={cell} cell={cell} />
 			))}
-			<View style={styles.row_total}>
-				<Text style={styles.text_total}>
+			<View style={[styles.row, styles.total]}>
+				<Text style={[styles.text, styles.text_total]}>
 					{total}/{maxCount}
 				</Text>
 			</View>
