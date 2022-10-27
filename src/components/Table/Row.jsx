@@ -8,12 +8,14 @@ const Row = ({ cell, head }) => {
 	const [count, setCount] = useState(0)
 	const { mode, wbc, total, setTotal, maxCount } = useMainContext()
 	const clickHandler = () => {
-		if (total === maxCount) {
-			alert('Максимальное значение !')
-			return
+		if (!head) {
+			if (total === maxCount) {
+				alert('Максимальное значение !')
+				return
+			}
+			setCount(count + 1)
+			setTotal(total + 1)
 		}
-		setCount(count + 1)
-		setTotal(total + 1)
 	}
 	return (
 		<TouchableHighlight onPress={clickHandler}>
