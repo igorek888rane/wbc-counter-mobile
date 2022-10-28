@@ -1,23 +1,43 @@
 import React from 'react'
 import Table from './Table/Table'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, View } from 'react-native'
+import {
+	RefreshControl,
+	SafeAreaView,
+	ScrollView,
+	StyleSheet,
+} from 'react-native'
 import Setting from './Setting/Setting'
+import { useMainContext } from '../context'
 
 const Main = () => {
+	const { setTotal, setMode, setWbc, setMaxCount, setCells } = useMainContext()
+	const defaultValue = () => {
+		setTotal(0)
+		setMode(true)
+		setWbc(0)
+		setMaxCount(100)
+		setCells(['Neutrophil', 'Monocyte', 'Lymphocyte', 'Eosinophil', 'Basophil'])
+	}
 	return (
-		<View style={styles.container}>
-			<Setting />
-			<Table />
-			<StatusBar style={'auto'} />
-		</View>
+		<SafeAreaView style={styles.container}>
+			<ScrollView
+				refreshControl={
+					<RefreshControl refreshing={false} onRefresh={defaultValue} />
+				}
+			>
+				<Setting />
+				<Table />
+				<StatusBar style={'auto'} />
+			</ScrollView>
+		</SafeAreaView>
 	)
 }
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#242d43',
-		alignItems: 'center'
-	}
+		paddingTop: StatusBar.currentHeight,
+	},
 })
 export default Main

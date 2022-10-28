@@ -3,20 +3,18 @@ import { Text, TouchableHighlight, View } from 'react-native'
 import { styles } from './styles'
 import { useMainContext } from '../../context'
 import { calcValue } from '../../utils/calcValue'
+import { useTotal } from '../../hooks/useTotal'
+import { changeCount } from '../../utils/changeCount'
 
 const Row = ({ cell, head }) => {
 	const [count, setCount] = useState(0)
 	const { mode, wbc, total, setTotal, maxCount } = useMainContext()
 	const clickHandler = () => {
 		if (!head) {
-			if (total === maxCount) {
-				alert('Максимальное значение !')
-				return
-			}
-			setCount(count + 1)
-			setTotal(total + 1)
+			changeCount({ mode, total, count, maxCount, setCount, setTotal })
 		}
 	}
+	useTotal({ total, setCount })
 	return (
 		<TouchableHighlight onPress={clickHandler}>
 			<View style={head ? [styles.row, styles.head] : styles.row}>
