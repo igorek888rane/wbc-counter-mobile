@@ -13,8 +13,7 @@ export const styles = StyleSheet.create({
 		padding: 25,
 		backgroundColor: '#242d43',
 		borderRadius: 50,
-		marginTop: 5,
-		marginBottom: 5,
+		marginVertical: 5,
 	},
 	head: {
 		marginTop: 0,
@@ -32,5 +31,18 @@ export const styles = StyleSheet.create({
 	},
 	text_center: {
 		textAlign: 'center',
+	},
+	delete: {
+		backgroundColor: 'red',
+		width: 70,
+		position: 'absolute',
+		right: 2,
+		borderRadius: 50,
+		paddingVertical: 20,
+		marginTop: 10,
+	},
+	text_delete: {
+		textAlign: 'center',
+		color: '#FFFF',
 	},
 })

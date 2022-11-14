@@ -11,13 +11,22 @@ import Setting from './Setting/Setting'
 import { useMainContext } from '../context'
 
 const Main = () => {
-	const { setTotal, setMode, setWbc, setMaxCount, setCells } = useMainContext()
+	const {
+		cells,
+		setTotal,
+		setMode,
+		setWbc,
+		setMaxCount,
+		setCells,
+		setListData,
+	} = useMainContext()
 	const defaultValue = () => {
 		setTotal(0)
 		setMode(true)
 		setWbc(0)
 		setMaxCount(100)
 		setCells(['Neutrophil', 'Monocyte', 'Lymphocyte', 'Eosinophil', 'Basophil'])
+		setListData(cells.map((cell, i) => ({ key: `${i}`, cell })))
 	}
 	return (
 		<SafeAreaView style={styles.container}>

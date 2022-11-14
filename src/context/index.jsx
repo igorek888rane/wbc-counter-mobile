@@ -11,8 +11,11 @@ const ContextProvider = ({ children }) => {
 		'Monocyte',
 		'Lymphocyte',
 		'Eosinophil',
-		'Basophil'
+		'Basophil',
 	])
+	const [listData, setListData] = useState(
+		cells.map((cell, i) => ({ key: `${i}`, cell }))
+	)
 	const [wbc, setWbc] = useState(0)
 	const [maxCount, setMaxCount] = useState(100)
 	const [total, setTotal] = useState(0)
@@ -27,9 +30,11 @@ const ContextProvider = ({ children }) => {
 			maxCount,
 			setMaxCount,
 			total,
-			setTotal
+			setTotal,
+			listData,
+			setListData,
 		}),
-		[mode, cells, wbc, maxCount, total]
+		[mode, cells, wbc, maxCount, total, listData]
 	)
 	return <MainContext.Provider value={value}>{children}</MainContext.Provider>
 }
